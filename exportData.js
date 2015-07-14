@@ -15,7 +15,7 @@ pg.connect(conString, function(err, client, done) {
   query.on('row', function(row) {
     var listing = {
       "lat": row.lat,
-      "lon": row.lon,
+      "lng": row.lon,
       "city": row.city,
       "value": row.local_price
     };
@@ -32,5 +32,3 @@ pg.connect(conString, function(err, client, done) {
     process.exit();
   });
 });
-
-

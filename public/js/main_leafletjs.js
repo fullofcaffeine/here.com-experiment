@@ -2,27 +2,36 @@ $(function() {
 
 
   // now generate some random data
+  //var points = [];
+  //var max = 0;
+  //var width = 200;
+  //var height = 200;
+  //var len = 2;
+
+  //while (len--) {
+  //  var val = Math.floor(Math.random()*100);
+    // now also with custom radius
+  //  var radius = Math.floor(Math.random()*70);
+
+   // max = Math.max(max, val);
+   // var point = {
+   //   lat: ((Math.floor(Math.random()*height))/(height/180)-90)/-1,
+    //  lng: Math.floor(Math.random()*width)/(width/360)-180,
+   //   value: Math.random(100)
+  //  };
+
+  //  points.push(point);
+    
+//  }
+
+  //override
   var points = [];
   var max = 0;
-  var width = 200;
-  var height = 200;
-  var len = 2;
+  $.ajax('/listings').done(function(data) {
+    points = data;
+    max = data.length;
+  });
 
-  while (len--) {
-    var val = Math.floor(Math.random()*100);
-    // now also with custom radius
-    var radius = Math.floor(Math.random()*70);
-
-    max = Math.max(max, val);
-    var point = {
-      lat: ((Math.floor(Math.random()*height))/(height/180)-90)/-1,
-      lng: Math.floor(Math.random()*width)/(width/360)-180,
-      value: Math.random(100)
-    };
-
-    points.push(point);
-    
-  }
 
   console.debug(points);
   // heatmap data format
