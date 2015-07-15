@@ -5,10 +5,8 @@
   <title></title>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-  <script type="text/javascript" src="js/heatmap.js"></script>
-  <script type="text/javascript" src="js/gmaps-heatmap.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
+  <script src="http://js.api.here.com/se/2.5.4/jsl.js?with=all" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="js/main_here.js"></script>
   <style type="text/css">
     #map-container {
       width: 500px;
@@ -18,10 +16,5 @@
 
 </head>
 <body>
-  <h1>Experiments/Examples</h1>
-  <ul>
-    <li><a href="/heatmapjs.html">Google Maps + Heatmap.js</a></li>
-    <li><a href="/googlemaps.html">Google Maps + Google Maps HeatMaps Layer</a></li>
-    <li><a href="/leafletjs.html">Leafletjs + Heatmap.js</a></li>
-  </ul>
+  <div id="map-container"></div>
 </body>

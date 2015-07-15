@@ -1,6 +1,3 @@
-require './app'
-
-use App
 use Rack::Static, urls: [''],
   :root => "public",
   :index => 'index.html'
