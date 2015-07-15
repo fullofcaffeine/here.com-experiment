@@ -37,6 +37,4 @@ var testData = {
 
 heatmap.setData(testData);
 
-
-
 })

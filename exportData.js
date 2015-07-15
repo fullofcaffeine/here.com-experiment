@@ -11,13 +11,13 @@ pg.connect(conString, function(err, client, done) {
   }
   var total = 0;
 
-  var query = client.query("SELECT lat, lon, city, local_price FROM listings WHERE city =  'Rio de Janeiro'");
+  var query = client.query("SELECT DISTINCT lat,lon,city,local_price FROM listings");
   query.on('row', function(row) {
     var listing = {
-      "lat": row.lat,
-      "lng": row.lon,
+      "lat": parseFloat(row.lat),
+      "lng": parseFloat(row.lon),
       "city": row.city,
-      "value": row.local_price
+      "value": row.local_price || 100 //avoids a NaN error for leaflet
     };
 
     count++;
